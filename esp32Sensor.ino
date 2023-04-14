@@ -132,6 +132,13 @@ void loop() {
 
   if (wifiMulti.run() != WL_CONNECTED) {
     Serial.println("Wifi connection lost");
+    Serial.print("Reconnecting to wifi");
+    delay(100);
+    while (wifiMulti.run() != WL_CONNECTED) {
+      Serial.print(".");
+      delay(100);
+    }
+    Serial.println();
   }
 
   // Write point
