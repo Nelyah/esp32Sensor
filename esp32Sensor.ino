@@ -147,6 +147,6 @@ void loop() {
     Serial.println(client.getLastErrorMessage());
   }
 
-  Serial.println("Wait 10s");
-  delay(10000);
+  Serial.println("Wait 60s");
+  delay(60000);
 }
