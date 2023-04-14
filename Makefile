@@ -11,7 +11,7 @@ compile: install
 install:
 	@[ -f "$$HOME/.arduino15/arduino-cli.yaml" ] || arduino-cli config init
 	@grep -qE 'additional_urls.*esp32.*\.json' "$$HOME/.arduino15/arduino-cli.yaml" || \
-		sed -ri '/additional_urls/s,.*,  additional_urls: [https://dl.espressif.com/dl/package_esp32_index.json],' \
+		sed -ri '/additional_urls/s,.*,  additional_urls: [https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json],' \
 		$$HOME/.arduino15/arduino-cli.yaml \
 		&& arduino-cli core update-index
 	arduino-cli core install esp32:esp32
